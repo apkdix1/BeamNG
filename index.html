@@ -9,7 +9,7 @@
   <meta property="og:title" content="BeamNG.drive Mobile - apkdix.fun"> 
   <meta property="og:description" content="Download the latest modded version of BeamNG.drive Mobile. Experience realistic soft-body physics and vehicle simulation."> 
   <meta property="og:image" content="https://i.ibb.co/99bcw424/IMG-20250228-122052.jpg"> 
-  <meta property="og:url" content="https://www.modlify.fun/beamng-drive-mobile"> 
+  <meta property="og:url" content="https://www.apkdix.fun/beamng-drive-mobile"> 
   <meta name="twitter:card" content="summary_large_image"> 
   <meta name="twitter:title" content="BeamNG.drive Mobile - apkdix.fun"> 
   <meta name="twitter:description" content="Download the latest modded version of BeamNG.drive Mobile. Experience realistic soft-body physics and vehicle simulation."> 
@@ -572,7 +572,7 @@
    <div class="footer-bottom">
      © 2025 
     <a href="#">Apkdix.fun</a>. All rights reserved. | Designed by 
-    <a href="https://www.youtube.com/@Apkdix" target="_blank">Modlify Games</a> 
+    <a href="https://www.youtube.com/@Apkdix" target="_blank">Apkdix Games</a> 
    </div> 
   </footer> 
   <!-- AdBlueMedia Script --> 
@@ -582,53 +582,72 @@
     var GUzNX_zqE_zTImlc={"it":4487209,"key":"f8989"};
 </script>
 <script src="https://d2v7l2267atlz5.cloudfront.net/9435479.js"></script>
+  
+  
+   <script>
+        // Prevent cookie consent from showing
+        window.abmDisableCookieConsent = true;
+        document.cookie = "abm-cookie-consent=accepted; max-age=31536000; path=/";
 
+        // Mobile menu toggle
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
 
+        // Screenshot swiping
+        const screenshotGrid = document.querySelector('.screenshot-grid');
+        let isDragging = false, startX, scrollLeft;
 
-<script>
-// باقي الدوال هنا تبقى كما هي
+        screenshotGrid.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - screenshotGrid.offsetLeft;
+            scrollLeft = screenshotGrid.scrollLeft;
+            screenshotGrid.style.cursor = 'grabbing';
+        });
 
-function triggerContentLocker(button) {
-  const gameTitle = button.closest('.all-game-card').querySelector('.all-game-title').textContent;
+        screenshotGrid.addEventListener('mouseleave', () => {
+            isDragging = false;
+            screenshotGrid.style.cursor = 'grab';
+        });
 
-  const contentLocker = document.createElement('div');
-  contentLocker.id = 'contentLocker';
-  contentLocker.style.position = 'fixed';
-  contentLocker.style.top = '0';
-  contentLocker.style.left = '0';
-  contentLocker.style.width = '100%';
-  contentLocker.style.height = '100%';
-  contentLocker.style.backgroundColor = 'rgba(0,0,0,0.9)';
-  contentLocker.style.zIndex = '10000';
-  contentLocker.style.display = 'flex';
-  contentLocker.style.flexDirection = 'column';
-  contentLocker.style.justifyContent = 'center';
-  contentLocker.style.alignItems = 'center';
-  contentLocker.style.color = 'white';
-  contentLocker.style.padding = '20px';
-  contentLocker.style.textAlign = 'center';
+        screenshotGrid.addEventListener('mouseup', () => {
+            isDragging = false;
+            screenshotGrid.style.cursor = 'grab';
+        });
 
-  contentLocker.innerHTML = `
-    <h3 style="color: var(--primary);">Complete offer to download ${gameTitle}</h3>
-    <p>Please complete one of the offers to unlock your download</p>
-    <div id="offerContainer"></div>
-    <button onclick="document.body.removeChild(document.getElementById('contentLocker'))" 
-      style="margin-top: 20px; padding: 10px 20px; background: #ff5555; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Cancel
-    </button>
-  `;
+        screenshotGrid.addEventListener('mousemove', (e) => {
+            if(!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - screenshotGrid.offsetLeft;
+            const walk = (x - startX) * 2;
+            screenshotGrid.scrollLeft = scrollLeft - walk;
+        });
 
-  document.body.appendChild(contentLocker);
+        // Installation tabs
+        function changeInstallTab(tabIndex) {
+            const tabs = document.querySelectorAll('.install-tab');
+            tabs.forEach((tab, index) => {
+                tab.classList.toggle('active', index === tabIndex);
+            });
+            
+            document.getElementById('android-steps').style.display = tabIndex === 0 ? 'block' : 'none';
+            document.getElementById('ios-steps').style.display = tabIndex === 1 ? 'block' : 'none';
+        }
 
-  const script1 = document.createElement('script');
-  script1.type = 'text/javascript';
-  script1.text = `var GUzNX_zqE_zTImlc={"it":4487209,"key":"f8989"};`;
+        function showContentLocker(platform) {
+            if (platform === 'android') {
+                _nO();
+            } else if (platform === 'ios') {
+                _nO();
+            }
+        }
+    </script>
 
-  const script2 = document.createElement('script');
-  script2.src = 'https://d2v7l2267atlz5.cloudfront.net/9435479.js';
-
-  document.body.appendChild(script1);
-  document.body.appendChild(script2);
-}
- </body>
+    <!-- اللوكر الجديد -->
+    <script type="text/javascript">
+        // كود اللوكر الجديد هنا
+        var GUzNX_zqE_zTImlc={"it":4487209,"key":"f8989"};};
+    </script>
+    <script src="https://d2v7l2267atlz5.cloudfront.net/9435479.js"></script>
+</body>
 </html>
